@@ -5,7 +5,7 @@ enum Cereal {
   Spelt, Wheat
 }
 
-fn print_cereals(){
+fn print_cereals() {
   let mut grains: Vec<Cereal> = vec![]; // initializes an empty vector of cereal
   grains.push(Cereal::Rye); // adds one item to the vector
   drop(grains); // delete grains and its content
