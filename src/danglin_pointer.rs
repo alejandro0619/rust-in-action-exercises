@@ -9,7 +9,7 @@ fn print_cereals() {
   let mut grains: Vec<Cereal> = vec![]; // initializes an empty vector of cereal
   grains.push(Cereal::Rye); // adds one item to the vector
   drop(grains); // delete grains and its content
-  println!("The cereal is: {}", grains); // will throw an error because  try to access to a vector when it's deleted.
+  println!("The cereal is: {}", grains); // will throw an error because  try to access to a vector when it's already deleted.
 }
 
 fn main(){
