@@ -95,12 +95,14 @@ fn compare_two_numbers(a: i32, b: u16){
   }
 }
 
+// We should run this code in the main file in order to success.
 fn calc_with_complex_numbers(){
   let a = Complex { re: 2.1, im: -1.3 }; // Every Rust type has a literal syntax
   let b = Complex::new(11.1, 22.2); // Most types implement a new() static method.
   let result = a + b;
   println!("{} + {}", result.re, result.im); // Accesses1 fields with dot (.) operator
 }
+
 fn main(){
   //basic_operation_with_numbers();
   //basic_binary_oct_hex_base_numbers();
