@@ -86,9 +86,15 @@ fn comparing_number(){
 // To appease the compiler we need to use the as operator to cast  one of the operants to other's type:
 
 fn compare_two_numbers(a: i32, b: u16){
+  // It is way safer to cast a type to a larger one (this is called promotion), 
+  //that's why we casted u16 to u32, and it is less risky than casting to a smaller type.
   if a < (b as i32){ // we cast b to i32.
     println!("{} is less than {}", a, b);
   }
+}
+
+fn calc_with_complex_numbers(){
+  
 }
 fn main(){
   //basic_operation_with_numbers();
@@ -96,5 +102,4 @@ fn main(){
   //numbers_type();
   //comparing_number();
   //compare_two_numbers(8, 15);
-
 }
