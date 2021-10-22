@@ -1,3 +1,5 @@
+use num::complex::Complex; // brings the Complex type into the local scope
+
 // This section digs into how to use numbers in rust and operate with them.
 
 // Int and decimal (floating-point)
@@ -94,7 +96,10 @@ fn compare_two_numbers(a: i32, b: u16){
 }
 
 fn calc_with_complex_numbers(){
-  
+  let a = Complex { re: 2.1, im: -1.3 }; // Every Rust type has a literal syntax
+  let b = Complex::new(11.1, 22.2); // Most types implement a new() static method.
+  let result = a + b;
+  println!("{} + {}", result.re, result.im); // Accesses1 fields with dot (.) operator
 }
 fn main(){
   //basic_operation_with_numbers();
@@ -102,4 +107,5 @@ fn main(){
   //numbers_type();
   //comparing_number();
   //compare_two_numbers(8, 15);
+  calc_with_complex_numbers();
 }
