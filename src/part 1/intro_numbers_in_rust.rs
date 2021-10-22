@@ -46,8 +46,55 @@ fn basic_binary_oct_hex_base_numbers(){
   println!("base 16: {:x} {:x} {:x}", three, thirty, three_hundred);
 
 }
+
+fn numbers_type(){
+  // Signed integers ranging from 8 to 64 bit.
+  // i8, i16, i32, i64
+  let temperture: i8 = - 32; // it's just an example, i32 is the type anno by default
+  
+  // Unsigned integers ranging from 8 to 64 bit.
+  // u8, u16, u32, u64
+  let result_sum_of_naturals: u8 = 2 + 8;
+  
+  // Floating-point numbers in 32-bit 64-bit variants.
+  // f32, f64
+  let student_notes: f32 = 5.8;
+
+  // isize and usize:
+  ///Integers that assume CPU's "native" width. For example, in 64-bit CPUs, usize and isize will be 64-bits wide.
+  
+  println!("Signed: {}, unsigned: {}, floating: {}", temperture, result_sum_of_naturals, student_notes);
+
+}
+
+fn comparing_number(){
+ // Less than < 
+  1.0 < 2.0;
+ // Greater than >
+  89 > 87;
+ // Equal to = 
+  1.0 == 1.0;
+ // Unequal !=
+ 2.9 != 9.5;
+ // Equal to or less than <= 
+ 1.0 <= 2.0;
+ // Equal to or greater than >=
+ 3.0 >= 9.0;
+}
+
+// Something extra to remember is that we can't compare two different types.
+// To appease the compiler we need to use the as operator to cast  one of the operants to other's type:
+
+fn compare_two_numbers(a: i32, b: u16){
+  if a < (b as i32){ // we cast b to i32.
+    println!("{} is less than {}", a, b);
+  }
+}
 fn main(){
   //basic_operation_with_numbers();
-  basic_binary_oct_hex_base_numbers();
+  //basic_binary_oct_hex_base_numbers();
+  //numbers_type();
+  //comparing_number();
+  //compare_two_numbers(8, 15);
 
 }
