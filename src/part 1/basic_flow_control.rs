@@ -55,15 +55,12 @@ fn _incr_count_using_while() {
   let mut count = 0;
   let time_limit = Duration::new(1,0); // creates a duration that represents 1 second
   let start = Instant::now(); // Accesses time from the system's clock.
-
-
+  println!("{:?}", Instant::now() - start ); // wtff does this means
+  
   while (Instant::now() - start) < time_limit { // An Instant minus an Instant return a Duratiion
     count += 1;
-
   }
   println!("{}", count);
-
-
 }
 fn _using_loop() {
   // This will be executing forever until a break statement is reached.
@@ -75,6 +72,6 @@ fn main(){
   //_anon_loops();
   //_basic_for_loop_with_index();
   //_using_continue();
-  //_incr_count_using_while();
+  _incr_count_using_while();
  
 }
