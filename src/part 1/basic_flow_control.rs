@@ -108,6 +108,7 @@ fn _match_pattern() {
 }
 
 fn _match_mutiples_values() {
+  let needle = 42;
   let haystack = [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862];
 
   for i in haystack {
@@ -123,6 +124,8 @@ fn _match_mutiples_values() {
     }
   }
 }
+
+
 fn main(){
   
 }
