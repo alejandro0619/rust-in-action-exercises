@@ -67,11 +67,62 @@ fn _using_loop() {
   // loop {}
   // and it's often seen when implementing long-running-servers.
 }
+
+fn _break_nested_loop() {
+  // You can break out of a loop using loop labels. A loop label is an identifier prefixed with an apostrophe ('), like this example shows:
+  'outer: for x in 0.. {
+    for y in 0.. {
+      for z in 0.. {
+        if x + y + z > 1000 {
+          break 'outer;
+
+        }      
+        // ...
+      }
+    }
+  } 
+}
+
+fn _conditional_branching() {
+  let item = 65;
+  if item == 54 {
+    // ..
+  } else if item == 78 {
+
+  } else {
+    //..
+  }
+}
+
+fn _match_pattern() {
+  // While it's possible to use if/else blocks, match provides a safer alternative.
+  // Match warns you if you haven't considered a relevant alternative. It is also elegant and concise:
+  let item = 78;
+
+  match item {
+    0 => {}, // to match a single value, provide the value. No operator is required
+    10..=20 => {}, // The ..= syntax matches an inclusive range
+    40 | 80 => {}, // The vertical bar (|) matches values on either each side of it
+    _ => {}, // The underscore matches every value
+  }
+}
+
+fn _match_mutiples_values() {
+  let haystack = [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862];
+
+  for i in haystack {
+    let result = match i {
+      42 | 132 => "Hit!!",
+      _ => "Miss",
+    };
+
+    if result == "Hit!!" {
+      println!("{}: {}", i , result);
+    } else {
+      println!("Didn't hit")
+    }
+  }
+}
 fn main(){
-  //_for_loop();
-  //_anon_loops();
-  //_basic_for_loop_with_index();
-  //_using_continue();
-  _incr_count_using_while();
- 
+  
 }
