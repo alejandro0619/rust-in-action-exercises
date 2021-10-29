@@ -1,3 +1,6 @@
+use std::ops::{Add}; // brings Add to local scope
+use std::time::{Duration};
+
 // Explicit lifetime annotations:
 // As a bit of forewarning, allow me to introduce some more complicated notation. As you read through Rust code, you might encounter definitions that are hard to decipher because those look like a hieroglyphs from an ancient  civilization.
 // <'a, 'b> declares two lifetimes variables. 'a and 'b, within the scope of add_with_lifetimes.
@@ -32,6 +35,11 @@ fn _add<T: std::ops::Add<Output = T >>(i: T, j: T) -> T {
 }
 
 
+// Generic function with a type variale and trait bounds.
+fn _add_version_two<T: Add<Output = T>>(i: T, j: T) -> T {
+  i + j 
+}
+
 fn main(){
-  
+ 
 }
