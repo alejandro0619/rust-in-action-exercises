@@ -1,6 +1,7 @@
 fn main() {
     let search_term = "picture";
-    let quote = "Every face, every shop, badroom windows, public-house, and dark square is a picture is a picture feverishly turned--in search of what? It is the same with books. What do we seek through million of pages?";
+    let quote = "\
+     Every face, every shop, badroom windows, public-house, and dark square is a picture is a picture feverishly turned--in search of what? It is the same with books. What do we seek through million of pages?";
 
     let mut line_num: usize = 1;
 
