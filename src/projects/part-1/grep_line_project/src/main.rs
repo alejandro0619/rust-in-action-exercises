@@ -7,7 +7,7 @@ fn main() {
 
     for line in quote.lines() {
         if line.contains(search_term){
-            println!("{} : {}", line_num, line);
+            println!("In the line{} I found : {}", line_num, line);
         }
         line_num += 1;
         
