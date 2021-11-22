@@ -1,16 +1,28 @@
+use regex::Regex;
+use clap::{App, Arg};
+
 fn main() {
-    let search_term = "picture";
-    let quote = "\
-     Every face, every shop, badroom windows, public-house, and dark square is a picture is a picture feverishly turned--in search of what? It is the same with books. What do we seek through million of pages?";
+    let args = App::new("Grep-lite")
+    .version("0.1")
+    .about("Searches for patterns")
+    .arg(Arg::with_name("pattern")
+     .help("The patter to search for")
+     .takes_value(true)
+     .required(true))
+     .get_matches();
 
-    let mut line_num: usize = 1;
+    let pattern = args.value_of("pattern").unwrap();
+    let re = Regex::new(pattern).unwrap();
 
-    for line in quote.lines() {
-        if line.contains(search_term){
-            println!("In the line{} I found : {}", line_num, line);
+    let quote = "Every face, every shop, badroom windows, public-house,
+and dark square is a picture is a picture feverishly turned--in search of what? It is the same with books. What do we seek through million of pages?";
+
+    for (i, line) in quote.lines().enumerate() {
+        let contains_substring = re.find(line);
+        match contains_substring {
+            Some(_) => println!("Line: {}, Text:{} ", i, line),
+            None => (),
         }
-        line_num += 1;
-        
     }
 }
 

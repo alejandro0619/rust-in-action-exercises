@@ -22,18 +22,21 @@ fn main(){
   for (i, line) in haystack.lines().enumerate() {
     if line.contains(needle) {
       tags.push(i);
-      let v = Vec::with_capacity(2*ctx_lines + 1);
+      let v = Vec::with_capacity(2 * ctx_lines + 1);
       ctx.push(v);
     }
   }
+
   if tags.is_empty(){
     return;
   }
+
   for (i, line) in haystack.lines().enumerate(){
     for(j, tag) in tags.iter().enumerate() {
       let lower_bound = tag.saturating_sub(ctx_lines);
+      println!("{}", lower_bound);
       let upper_bound = tag + ctx_lines;
-
+      println!("result: {}, tag: {}, ctx_lines: {}", upper_bound, tag, ctx_lines);
       if(i >=lower_bound) && (i<= upper_bound) {
         let line_as_string = String::from(line);
         let local_ctx = (i, line_as_string);
