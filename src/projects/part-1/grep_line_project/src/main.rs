@@ -1,7 +1,10 @@
 use regex::Regex;
 use clap::{App, Arg};
+use std::fs::File;
+use std::io::BufReader;
+use std::io::prelude::*;
 
-fn main() {
+fn _grep_line_using_clap(){
     let args = App::new("Grep-lite")
     .version("0.1")
     .about("Searches for patterns")
@@ -24,6 +27,19 @@ and dark square is a picture is a picture feverishly turned--in search of what? 
             None => (),
         }
     }
+}
+
+fn grep_line_reding_file(){
+    let file = File::open("readme.md").unwrap();
+    let reader = BufReader::new(file);
+
+   for line_ in reader.lines() {
+       let line = line_.unwrap();
+       println!("{}, {} bytes long", line, line.len());
+   }
+}
+fn main() {
+    grep_line_reding_file();
 }
 
 
